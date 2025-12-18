@@ -134,6 +134,20 @@ The techniques, ideas, and tools mentioned in this document are intended **only*
 - ✅ Fixed color adaptation issues in Burp Dark theme
 - ✅ Added HTTP method filtering
 
+### v1.0.2
+- ✅ Optimize Domain Tree
+- ✅ Optimize and delete filtering results
+- ✅ Optimize the loading of package details for stuck issues
+- ✅ Add packet storage issues, API reset
+  ```
+  Hash calculation logic:
+	Basic hash: host+"|"+path+"|"+method
+	If 'Consider RequestBody' is enabled (including RequestBody=true) and the request method is POST/PUT/PATCH/DELETE:
+	Calculate the hash of requestBody
+	Append the body hash to the base hash: apiKey+"|"+bodyHash
+	Finally calculate SHA-256 for the entire string
+  ```
+
 ## 📄 License
 
 MIT License (see LICENSE).

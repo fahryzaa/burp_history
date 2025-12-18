@@ -88,9 +88,9 @@
 ## 📖 使用指南
 
 ### 首次使用
-1) 按安装说明加载插件，出现 `Traffic Recorder` 标签页  
-2) （可选）数据库：默认 SQLite 即可；MySQL/PostgreSQL 请在 **数据库配置** 标签页设置  
-3) 监控选项：在 **监控配置** 选择工具、保存选项、黑白名单  
+1) 按安装说明加载插件，出现 `Traffic Recorder` 标签页
+2) （可选）数据库：默认 SQLite 即可；MySQL/PostgreSQL 请在 **数据库配置** 标签页设置
+3) 监控选项：在 **监控配置** 选择工具、保存选项、黑白名单
 4) 开始监控：自动捕获，数据在 **流量监控** 展示
 
 ### 流量监控页面
@@ -133,6 +133,20 @@
 ### v1.0.1
 - ✅ 优化不适配burp dark配色 问题
 - ✅ 增加请求方法过滤
+
+### v1.0.2
+- ✅ 优化域名树
+- ✅ 优化删除筛选结果
+- ✅ 优化数据包详情加载卡死问题
+- ✅ 增加数据包存储问题，API去重设置
+  ```
+  Hash 计算逻辑：
+    基础 hash：host + "|" + path + "|" + method
+    如果启用“考虑请求体”（includeRequestBody = true），且请求方法是 POST/PUT/PATCH/DELETE：
+    计算 requestBody 的 hash
+    将 body hash 追加到基础 hash：apiKey + "|" + bodyHash
+    最终对整个字符串计算 SHA-256
+  ```
 
 ## 📄 许可证
 
