@@ -165,6 +165,10 @@ The techniques, ideas, and tools mentioned in this document are intended **only*
 -  ✅  Add encoding conversion
 -  ✅  Optimize caching mechanism and context retrieval port
 
+### v1.0.6
+-  ✅  Optimize configuration saving
+-  ✅  Optimize team mode database field issues
+
 ## 📄 License
 
 MIT License (see LICENSE).
